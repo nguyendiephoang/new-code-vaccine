@@ -22,7 +22,7 @@ public class VaccineDAO extends DBContext {
         int idVaccine = -1;
         String getIdSql = "Select [idVaccineAP] from [vaccine].[dbo].[appointment_provision] where [idAppointmentProvision] = "
                 + int1;
-        try (Connection conn = getConnect()) {
+        try ( Connection conn = getConnect()) {
             PreparedStatement stmt = conn.prepareStatement(getIdSql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
@@ -60,7 +60,7 @@ public class VaccineDAO extends DBContext {
         java.sql.Date date = null;
         String getIdSql = "Select [appointmentDateAt] from [vaccine].[dbo].[appointment_provision] where [idAppointmentProvision] = "
                 + int1;
-        try (Connection conn = getConnect()) {
+        try ( Connection conn = getConnect()) {
             PreparedStatement stmt = conn.prepareStatement(getIdSql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
@@ -79,7 +79,7 @@ public class VaccineDAO extends DBContext {
         int hos = -1;
         String getIdHosSql = "Select [idHAP] from [vaccine].[dbo].[appointment_provision] where [idAppointmentProvision] = "
                 + int1;
-        try (Connection conn = getConnect()) {
+        try ( Connection conn = getConnect()) {
             PreparedStatement stmt = conn.prepareStatement(getIdHosSql);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
@@ -93,6 +93,7 @@ public class VaccineDAO extends DBContext {
         return hos;
     }
 
+    // Nguyen Ngoc Nhan
     public List<Vaccine> getAllVaccine() {
         List<Vaccine> list = new ArrayList<>();
         String query = "select * from vaccine";
@@ -108,6 +109,7 @@ public class VaccineDAO extends DBContext {
         return list;
     }
 
+    //Nguyen NGoc nHan
     public List<VaccineProvision> getAllVaccineWithHospital() {
         List<VaccineProvision> vaccines = new ArrayList<>();
 
@@ -139,7 +141,7 @@ public class VaccineDAO extends DBContext {
 
     public static int getIdVacByName(String nameVaccine) {
         String sql = "SELECT [idVaccine] FROM [dbo].[vaccine] WHERE [name] = ?";
-        try (Connection conn = getConnect()) {
+        try ( Connection conn = getConnect()) {
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, nameVaccine); // Set the parameter value
             ResultSet rs = stmt.executeQuery();
@@ -190,6 +192,7 @@ public class VaccineDAO extends DBContext {
         }
         return provision;
     }
+//NNN
 
     public List<VaccineProvision> getAllVaccineProvision(String idHVP) {
         List<VaccineProvision> list = new ArrayList<>();
@@ -254,6 +257,7 @@ public class VaccineDAO extends DBContext {
         return 0;
     }
 
+    //NNN
     public void insertVaccine(String name, String detail) {
         String query = "INSERT INTO vaccine (name, detail)\n"
                 + "VALUES (?,?);";
@@ -266,6 +270,7 @@ public class VaccineDAO extends DBContext {
         } catch (Exception e) {
         }
     }
+//NNN
 
     public void updateVaccine(String idVaccine, String name, String detail) {
         String query = "UPDATE vaccine "
@@ -281,6 +286,7 @@ public class VaccineDAO extends DBContext {
         } catch (Exception e) {
         }
     }
+//nnn
 
     public void deleteVaccine(String dvid) {
         String query = "DELETE FROM vaccine WHERE idVaccine = ?";
@@ -326,6 +332,7 @@ public class VaccineDAO extends DBContext {
         return list;
     }
 
+    //NNN ko su dung
     public Vaccine checkVaccineByName(String name) {
         String query = "SELECT idVaccine, name, detail FROM vaccine WHERE name = ?";
 
@@ -424,6 +431,37 @@ public class VaccineDAO extends DBContext {
         } catch (Exception e) {
         }
         return null;
+    }
+
+    // Nguyen Ngoc Nhan updae date : 16/7/2023
+    public boolean isVaccineProvisionExist(String idVaccine, String idHVP) {
+        boolean isExist = false;
+        String query = "SELECT COUNT(*) AS count FROM [dbo].[vaccine_provision] WHERE [idVaccineVP] = ? AND [idHVP] = ?";
+        try {
+            conn = new DBContext().getConnect();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, idVaccine);
+            ps.setString(2, idHVP);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                int count = rs.getInt("count");
+                isExist = count > 0;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return isExist;
     }
 
     public String getVacNameByVacId(int int1) {

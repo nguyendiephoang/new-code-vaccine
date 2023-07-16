@@ -116,7 +116,7 @@ public class UpdateUserByAdminController extends HttpServlet {
                     + "  </tr>\n"
                     + "</table>";
             new Notification("Update information ", email, "Your information have change" + table).send();
-
+            System.out.println(name);
             request.getSession().setAttribute("updateinforsucess", "The information has been changed successfully");
             response.sendRedirect("user_manager.jsp");
     }

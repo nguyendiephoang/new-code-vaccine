@@ -50,6 +50,7 @@ public class EditVaccineByAdminController extends HttpServlet {
              
              VaccineDAO dao = new VaccineDAO();
              dao.updateVaccine(pidVaccine, pname, pdetail);
+             System.out.println(pdetail);
                   response.sendRedirect("AdminManagerVaccine.jsp");
        
     }

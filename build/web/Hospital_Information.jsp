@@ -72,7 +72,7 @@ FIXED
                                                                 <li><a href="detail_vaccine.html">Detail Vaccine</a></li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="03_01_services.html">Booking Schedules</a></li>
+                                    
                                                         <li class="has-sub"><a href="#">Hospital</a>
                                                             <ul>
                                                                 <li><a href="HospitalController ">List of hospital information</a></li>

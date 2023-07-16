@@ -21,7 +21,7 @@ public class logoutController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.getSession().setAttribute("id", null);
         request.getSession().setAttribute("role", null);
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("newHome.jsp");
     }
 
   

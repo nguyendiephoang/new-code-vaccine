@@ -4,31 +4,22 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <jsp:useBean id ="a" class="dal.AdminDAO" scope ="session"></jsp:useBean>
-            <meta charset="UTF-8">
+            <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
             <title>Document</title>
-
-
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
             <!-- Nạp các tệp JavaScript của jQuery, Popper.js và Bootstrap -->
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-
-
             <link rel="stylesheet" href="css/bootstrap-4.0.0-dist/css/bootstrap.min.css">
             <!----css3---->
             <link rel="stylesheet" href="css/custom.css">
-
-
             <!--google fonts -->
-
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -175,10 +166,6 @@
                 font-size: 19px;
             }
 
-
-
-
-
             /* Modal styles */
 
             /*            .modal .modal-header, .modal .modal-body, .modal .modal-footer {
@@ -231,17 +218,7 @@
             }
             footer.footer {
                 margin-top: 16%;
-            }
-
-
-
-
-
-
-
-
-
-
+            }   
 
         </style>
 
@@ -271,8 +248,6 @@
 
 
         <div class="wrapper">
-
-
             <div class="body-overlay"></div>
 
             <!-------------------------sidebar------------>
@@ -420,23 +395,9 @@
                     </div>
                     <div class="xp-breadcrumbbar text-center">
                         <h4 class="page-title">Manage User</h4>
-
                     </div>
-
                 </div>
-
-
-
-
-
-
-
-
-
-
                 <div class="container">
-
-
                     <div class="table-wrapper">
                         <div class="table-title">
                             <div class="row">
@@ -611,9 +572,6 @@
                                                           id="infor">
                                                         <input type="search" value="${i.idUser}" name="idUser" hidden>
                                                         <div class="container row">
-
-
-
                                                             <div class="col-sm-12">
                                                                 <label for="first_name">
                                                                     <h6>User name</h6>
@@ -692,38 +650,25 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-
-
                                 </c:forEach>
                                 </tbody>
                             </table>
                         </div>    
                     </div>
-                         </div>
+                </div>
 
-                    <div    >
-             
-                
-                <ul class="pagination">
-                    <li class="page-item disabled"><a href="user_manager.jsp?page=1">Previous</a></li>
-                    <li class="page-item"><a href="user_manager.jsp?page=${page-1}" class="page-link">${page-1}</a></li>
-                    <li class="page-item active"><a href="#" class="page-link"><c:out value="${page}"/></a>
-                    <li class="page-item"><a href="user_manager.jsp?page=${page+1}" class="page-link">${page+1}</a></li>
-                    <li class="page-item"><a href="user_manager.jsp?page=${maxpage}">Next</li>
-                   
-                  </ul>
-            </div>
+                <div    >
 
 
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a href="user_manager.jsp?page=1">Previous</a></li>
+                        <li class="page-item"><a href="user_manager.jsp?page=${page-1}" class="page-link">${page-1}</a></li>
+                        <li class="page-item active"><a href="#" class="page-link"><c:out value="${page}"/></a>
+                        <li class="page-item"><a href="user_manager.jsp?page=${page+1}" class="page-link">${page+1}</a></li>
+                        <li class="page-item"><a href="user_manager.jsp?page=${maxpage}">Next</li>
 
-
-
-
-
-
-
+                    </ul>
+                </div>
                 <!--footer-->
                 <footer class="footer">
                     <div class="container-fluid">
@@ -734,13 +679,13 @@
                 </footer>
 
 
-                 <script src="assets/js/managerjs.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="assets/js/managerjs.js"></script>
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
                 </body>
 

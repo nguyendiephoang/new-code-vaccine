@@ -43,6 +43,24 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     </head>
+    
+     <body>
+        <c:set var="page" value="${param.page}" scope="session"/>
+        <c:if test="${page<=0}">
+            <c:set var="page" value="1" scope="session"/>
+        </c:if>
+        <c:if test="${page==null}">
+            <c:set var="page" value="1" scope="session"/>
+        </c:if>
+        <c:if test="${not empty page}">
+            <c:set var="page" value="${page}" scope="session"/>
+        </c:if>
+        <fmt:formatNumber type="number" var="maxpage" value="${Math.ceil(v.allVaccine.size()/2)}">
+
+        </fmt:formatNumber>
+        <c:if test="${page>=maxpage}">
+            <c:set var="page" value="${maxpage}" scope="session"/>
+        </c:if>
 
     <style>
         img{
@@ -311,9 +329,9 @@
                                             <ul class="dropdown-menu small-menu">
                                       
                                                 <li>
-                                                    <a href="HospitalProfileController"><span class="material-icons">
+                                                    <a href="#"><span class="material-icons">
                                                             settings
-                                                        </span>Profile</a>
+                                                        </span>Settings</a>
                                                 </li>
                                                 <li>
                                                     <a href="logoutController">

@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.VaccineProvision;
 
-
 /**
  *
  * @author HUNTER
@@ -69,18 +68,27 @@ public class AddVaccineProvisionByHospitalController extends HttpServlet {
 
         VaccineDAO dao = new VaccineDAO();
 
-        VaccineProvision vaccine = dao.checkExistVaccineProvsionById(idVaccine);
-
-        if (vaccine == null) {
-
-            dao.insertVaccineProvison(idVaccine, id, price, img);
-
-            response.sendRedirect("hospitalManagerVaccineProvision.jsp");
-        } else {
+//        VaccineProvision vaccine = dao.checkExistVaccineProvsionById(idVaccine,id);
+//
+//        if (vaccine == null) {
+//
+//            dao.insertVaccineProvison(idVaccine, id, price, img);
+//
+//            response.sendRedirect("hospitalManagerVaccineProvision.jsp");
+//        } else {
+//            request.setAttribute("mess1", "The Id Vaccin  already exists in your System");
+//            request.setAttribute("mess2", "Please Enter Again !");
+//            request.getRequestDispatcher("addVaccineProvision.jsp").forward(request, response);
+//
+//        }
+        boolean vaccine = dao.isVaccineProvisionExist(idVaccine, id);
+        if (vaccine) {
             request.setAttribute("mess1", "The Id Vaccin  already exists in your System");
             request.setAttribute("mess2", "Please Enter Again !");
             request.getRequestDispatcher("addVaccineProvision.jsp").forward(request, response);
-
+        } else {
+            dao.insertVaccineProvison(idVaccine, id, price, img);
+            response.sendRedirect("hospitalManagerVaccineProvision.jsp");
         }
 
     }

@@ -15,10 +15,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Manager Vaccine By Admin</title>
-
         <link href="css/adminManager.css" rel="stylesheet" type="text/css"/>
-
-
         <!-- Nạp các tệp CSS của Bootstrap và Material Icons -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -26,16 +23,10 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-
-
         <link rel="stylesheet" href="css/bootstrap-4.0.0-dist/css/bootstrap.min.css">
         <!----css3---->
         <link rel="stylesheet" href="css/custom.css">
-
-
         <!--google fonts -->
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -272,10 +263,7 @@
 
 
         <div class="wrapper">
-
-
             <div class="body-overlay"></div>
-
             <!-------------------------sidebar------------>
             <!-- Sidebar  -->
             <nav id="sidebar">
@@ -322,11 +310,8 @@
 
                 <div class="top-navbar">
                     <div class="xp-topbar">
-
                         <!-- Start XP Row -->
                         <div class="row">
-
-
                             <div class="col-12 col-md- col-lg-12 order-1 order-md-3">
                                 <div class="xp-profilebar text-right">
                                     <nav class="navbar p-0">
@@ -339,7 +324,7 @@
                                                 </a>
                                                 <ul class="dropdown-menu small-menu">
 
-                                                  
+
                                                     <li>
                                                         <a href="logoutController">
                                                             <span class="material-icons">
@@ -351,15 +336,8 @@
                                     </nav>
                                 </div>
                             </div>    
-
-
-
                         </div>    
-                        <!-- End XP Row -->
-
                     </div>
-
-
                 </div>
 
 
@@ -409,7 +387,7 @@
                                         <td>
 
                                             <a href="#" data-toggle="modal" data-target="#editVaccineModal${o.idVaccine}" class="edit" ><i class="material-icons">&#xE254;</i></a>
-<!--                                            <a href=#" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip"  onclick="showMess()"title="Delete">&#xE872;</i></a>-->
+                                            <!--                                            <a href=#" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip"  onclick="showMess()"title="Delete">&#xE872;</i></a>-->
 
                                         </td>
                                     </tr>
